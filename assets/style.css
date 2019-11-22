@@ -1,0 +1,14 @@
+body {
+  height: 100vh;
+}
+.header {
+  text-align: center;
+  font-size: 26pt;
+  background: cornflowerblue;
+}
+.addNewListFeature {
+  text-align: center;
+  border: solid;
+  margin-top: 2em;
+  background: lightcoral;
+}
