@@ -2,17 +2,17 @@ import { generateId } from "../utils.js";
 import Chore from "./Chore.js";
 
 export default class List {
-  constructor(data) {
-    this.id = data.id || generateId();
-    this.name = data.name;
-    this.chores = data.chores.map(c => new Chore(c));
+  constructor({ id = generateId(), name, chores }) {
+    this.id = id;
+    this.name = name;
+    this.chores = chores.map(c => new Chore(c));
   }
   get template() {
     return /*html*/ `
     <div class="col-3">
     <h1>${this.name}</h1>
     ${this.drawChore()}
-    <form onsubmit="app.listController.addChore(event)">
+    <form onsubmit="app.listController.addChore(event, '${this.id}')">
       <input
         type="text"
         class="form-control"

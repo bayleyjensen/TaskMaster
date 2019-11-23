@@ -1,5 +1,7 @@
 import List from "../Models/List.js";
 import Store from "../store.js";
+import store from "../store.js";
+import Chore from "../Models/Chore.js";
 
 //Public
 class ListService {
@@ -7,6 +9,12 @@ class ListService {
     console.log("we made it even further!");
     let newList = new List(listData);
     Store.State.lists.push(newList);
+  }
+  addChore(newChore) {
+    console.log("aaaaooogggaaaa");
+    let freshChore = new Chore(newChore);
+    console.log(freshChore);
+    store.State.lists.push(freshChore);
   }
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,

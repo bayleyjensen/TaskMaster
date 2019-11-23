@@ -1,9 +1,10 @@
 import { generateId } from "../utils.js";
 
 export default class Chore {
-  constructor(data) {
-    this.id = data.id || generateId();
-    this.name = data.name;
+  constructor({ id = generateId(), name, listId }) {
+    this.id = id;
+    this.name = name;
+    this.listId = listId;
   }
   get template() {
     return /*html*/ `

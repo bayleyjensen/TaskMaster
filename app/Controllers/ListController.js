@@ -30,14 +30,18 @@ export default class ListController {
     _drawLists();
   }
 
-  addChore(event, choreId) {
+  addChore(event, listId) {
+    console.log("great");
     event.preventDefault();
     let formData = event.target;
 
     let newChore = {
       name: formData.name.value,
-      choreId
+      listId: listId
     };
+    ListService.addChore(newChore);
+    formData.reset();
+    _drawLists();
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems
 }
