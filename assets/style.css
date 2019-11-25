@@ -12,3 +12,13 @@ body {
   margin-top: 2em;
   background: lightcoral;
 }
+h3 {
+  border-bottom: solid;
+}
+body {
+  text-align: center;
+}
+.border {
+  border-left: solid;
+  border-right: solid;
+}
