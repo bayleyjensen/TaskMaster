@@ -35,8 +35,8 @@ class ListService {
   }
 
   deleteChore(listId, choreId) {
-    let foundlist = store.State.lists.find(List => listId == listId);
-    foundlist.chores = foundlist.chores.filter(Chore => list != chore);
+    let foundlist = store.State.lists.find(List => List.id == listId);
+    foundlist.chores = foundlist.chores.filter(Chore => Chore.id != choreId);
     store.saveState();
   }
 
