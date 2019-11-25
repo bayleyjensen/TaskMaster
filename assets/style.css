@@ -22,3 +22,6 @@ body {
   border-left: solid;
   border-right: solid;
 }
+#lists {
+  border: ridge;
+}

@@ -9,7 +9,7 @@ export default class Chore {
   get template1() {
     return /*html*/ `
     <p>${this.name}
-  <button class="btn btn-danger" onclick="app.listController.deleteChore('${this.listId}','${this.id}')">finished</button>
+  <button class="btn btn-danger" onclick="app.listController.deleteChore('${this.listId}','${this.id}')">X</button>
   </p>
   `;
   }

@@ -10,7 +10,7 @@ export default class List {
   get template() {
     return /*html*/ `
     <div class="col-3">
-    <h3 class=>${this.name}</h3>
+    <h3 >${this.name}</h3>
     <p id="chore"> 
     <p>${this.drawChore()}</p>
     </p>
