@@ -1,6 +1,7 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
 import Chore from "../Models/Chore.js";
+import { generateId } from "../utils.js";
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
@@ -48,6 +49,10 @@ export default class ListController {
   deleteList(listId) {
     console.log("were making headway");
     ListService.deleteList(listId);
+    _drawLists();
+  }
+  deleteChore(listId, choreId) {
+    ListService.deleteChore(listId, choreId);
     _drawLists();
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems

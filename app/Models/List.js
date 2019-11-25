@@ -10,9 +10,9 @@ export default class List {
   get template() {
     return /*html*/ `
     <div class="col-3">
-    <h1>${this.name}</h1>
+    <h3>${this.name}</h3>
     <p id="chore"> 
-    <h3>${this.drawChore()}</h3>
+    <p>${this.drawChore()}</p>
     </p>
     <form onsubmit="app.listController.addChore(event, '${this.id}')">
       <input

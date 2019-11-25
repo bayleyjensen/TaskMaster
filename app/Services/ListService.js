@@ -11,16 +11,31 @@ class ListService {
     Store.State.lists.push(newList);
     store.saveState();
   }
+  // addChore(newChore) {
+  //   console.log("aaaaooogggaaaa");
+  //   let freshChore = new Chore(newChore);
+  //   console.log(freshChore);
+  //   store.State.lists[newChore].chores.push(freshChore);
+  //   store.saveState();
+  // }
+
   addChore(newChore) {
-    console.log("aaaaooogggaaaa");
+    debugger;
     let freshChore = new Chore(newChore);
-    console.log(freshChore);
-    store.State.lists[newChore].chores.push(freshChore);
+    let foundList = store.State.lists.find(list => list.id == list.id);
+    foundList.chores.push(freshChore);
     store.saveState();
   }
   deleteList(listId) {
-    let foundList = store.State.lists.findIndex(list => list.id == listId);
+    if (confirm("Are you sure you want to mark complete?")) {
+    } else return;
     store.State.lists = store.State.lists.filter(list => list.id != listId);
+    store.saveState();
+  }
+
+  deleteChore(listId, choreId) {
+    let foundlist = store.State.lists.find(List => listId == listId);
+    foundlist.chores = foundlist.chores.filter(Chore => listId != choreId);
     store.saveState();
   }
 
